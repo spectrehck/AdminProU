@@ -14,6 +14,7 @@ import { Graficas1Component } from './graficas1/graficas1.component';
 
 import { IncrementadorComponent } from '../components/incrementador/incrementador.component';
 import { GraficodonaComponent } from '../components/graficodona/graficodona.component';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
 
 
 
@@ -25,6 +26,7 @@ import { GraficodonaComponent } from '../components/graficodona/graficodona.comp
         Graficas1Component,
         IncrementadorComponent,
         GraficodonaComponent,
+        AccountSettingsComponent,
 
     ],
     exports: [
