@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
-import { element } from 'protractor';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild} from '@angular/core';
+
 
 
 @Component({
@@ -13,6 +13,7 @@ export class IncrementadorComponent implements OnInit {
   @Input() progreso: number = 50;
 
   @Output() cambioValor: EventEmitter <number> = new EventEmitter;
+  txtProgress: any;
 
   constructor() {
     /* console.log('Leyenda', this.leyenda );
@@ -20,13 +21,14 @@ export class IncrementadorComponent implements OnInit {
    }
 
   ngOnInit() {
-    console.log('Leyenda', this.leyenda );
-    console.log('progreso', this.progreso);
+/*     console.log('Leyenda', this.leyenda );
+    console.log('progreso', this.progreso); */
 
   }
   onChanges(newValue: number) {
-const elemHTML: any = document.getElementsByName('progreso')[0];
-console.log( elemHTML.value);
+
+/* const elemHTML: any = document.getElementsByName('progreso')[0];
+console.log( elemHTML.value); */
 
   if ( newValue >= 100) {
     this.progreso = 100;
@@ -36,8 +38,11 @@ console.log( elemHTML.value);
     this.progreso = newValue;
 
   }
-  elemHTML.value = this.progreso;
-  this. cambioValor.emit( this.progreso );
+/*   elemHTML.value = this.progreso;
+ */
+this.txtProgress.nativeElement.value = this.progreso;
+
+this.cambioValor.emit( this.progreso );
 
   }
 
